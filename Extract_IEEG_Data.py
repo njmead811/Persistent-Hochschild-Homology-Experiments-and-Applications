@@ -179,7 +179,7 @@ def CreateCorrelationMatrix(patient_id):
 
 
 def main():   
-    labels =  [ "4a", "4b", "1", "2", "3" "13a", "13b", "14a", "14b", "15", "16"] + [str(i) for i in range(5, 13)] 
+    labels =  [ "4a", "4b", "1", "2", "3" "13a", "13b", "14a", "14b", "15", "16", "5", "6", "8", "9", "11", "12", "13"] 
     for l in labels: 
         CreateCorrelationMatrix(l)
 
@@ -188,6 +188,7 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 
 
