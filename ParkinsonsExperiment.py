@@ -55,10 +55,9 @@ def main():
     """
     
     
-    #threshholds_lower = [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ]
-    #cv_folds = [2, 3, 5]
-    threshholds_lower = [0.4]
-    cv_folds = [5]
+    threshholds_lower = [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ]
+    cv_folds = [2, 3, 5]
+    
     
     # complete the experiment for Hochschild homology
     pce.MultiClassificationExperiment(samples, classification, 10, 'h', "PARKINSONS", cv_folds, threshholds_lower, [1.0]) 
@@ -67,5 +66,6 @@ def main():
 
 if __name__=="__main__":
     main()
+
 
 
