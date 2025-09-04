@@ -372,7 +372,7 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
             # recompute the threshholded values for the graphs and the bounds, since the latter is very computationally intensive. 
             GraphsTh = [ph.Threshhold(Graphs[l], thresh_lower_set[i], thresh_upper_set[j]) for l in range(len(Graphs))]
             
-             print("We are currently computing the bounds for threshhold choice " + str(i*len(thresh_upper_set) + j))
+            print("We are currently computing the bounds for threshhold choice " + str(i*len(thresh_upper_set) + j))
             # compute the bounds for the filtration used to compute persistent homology features. 
             bounds = BoundsGraphArray(GraphsTh, homology_type)
             
@@ -439,5 +439,6 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
     with open(homology_name + "_LINEAR_RAW_SCORES_" + experiment_name + ".txt", "w") as f:
          f.write(Linear_Results_Raw_Txt)         
                 
+
 
 
