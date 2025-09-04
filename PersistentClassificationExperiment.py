@@ -416,7 +416,7 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
     rbf_df = pd.DataFrame(all_rbf_scores_2D, columns=["acc_mean", "acc_std", "prec_mean", "prec_std", "rec_mean", "rec_std"])
     
     # reshape the array containing the scores for the raw Betti number rbf kernel classification, and put in dataframe form. 
-    all_rbf_scores_raw_2D= all_rbf_scores_raw.reshape((len(thresh_lower_set) * len(thresh_upper_set) * len(cv_folds), 6))
+    all_rbf_scores_raw_2D= all_rbf_scores_raw.reshape((len(thresh_lower_set) * len(thresh_upper_set), 6))
     raw_rbf_df = pd.DataFrame(all_rbf_scores_raw_2D, columns=["acc_mean", "acc_std", "prec_mean", "prec_std", "rec_mean", "rec_std"])
     
     
@@ -439,6 +439,7 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
     with open(homology_name + "_LINEAR_RAW_SCORES_" + experiment_name + ".txt", "w") as f:
          f.write(Linear_Results_Raw_Txt)         
                 
+
 
 
 
