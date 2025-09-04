@@ -381,7 +381,7 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
             all_bounds[i][j] = np.asarray(bounds).reshape(-1)
 
             for k in range(len(cv_folds)):
-                    print("this is experiment #" + str(i*j* len(cv_folds) + k))
+                    print("this is experiment #" + str(i * len(thresh_upper_set) * len(cv_folds) + j* len(cv_folds) + k))
                     # compute the results for the current experiment
                     Linear_Results, rbf_scores, Linear_Results_Raw, rbf_scores_raw = GraphClassificationExperiment( GraphsTh, classes, bounds,  10, homology_type, cv_folds[k], "PARKINSONS", "lower_thresh=" + str(thresh_lower_set[i]) + "upper_thresh=" + str(thresh_upper_set[j]))
                     # add the rbf scores of the current experiment to the arrays of rbf scores
@@ -439,3 +439,4 @@ def MultiClassificationExperiment (Graphs, classes, num_filt_steps, homology_typ
     with open(homology_name + "_LINEAR_RAW_SCORES_" + experiment_name + ".txt", "w") as f:
          f.write(Linear_Results_Raw_Txt)         
                 
+
